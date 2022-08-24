@@ -1,0 +1,11 @@
+{
+  "**/*.{ts, tsx, js, jsx}": [
+    "npm run lint"
+  ],
+  "src/**/*.{css,less,sass,scss}": [
+    "npm run stylelint"
+  ],
+  "*.md": [
+    "prettier --write"
+  ]
+}

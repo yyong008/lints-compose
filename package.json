@@ -1,0 +1,51 @@
+{
+  "name": "lints-compose",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "linsts-compose": "./src/cli.js"
+  },
+  "scripts": {
+    "lint": "eslint --ext .ts,.js,.tsx,.jsx .",
+    "lint:fix": "eslint --ext .ts,.js,.tsx,.jsx . --fix",
+    "stylelint": "stylelint ./src/**/*.{css,less,scss,sass}",
+    "stylelint:fix": "stylelint ./src/**/*.{css,less,scss,sass} --fix",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
+    "commit": "git add . && cz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "inquirer": "^9.1.0",
+    "lodash.merge": "^4.6.2",
+    "ora": "^6.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "typescript": "^4.7.4",
+    "@typescript-eslint/parser": "^5.33.1",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "prettier": "^2.7.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "stylelint": "^14.10.0",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "lint-staged": "^13.0.3",
+    "husky": "^8.0.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
