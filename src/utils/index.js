@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import logger from './logger.js'
 import { execSync, exec } from 'child_process'
 import { getConfig } from './config.js'
+import { promisify } from 'node:util'
 
 const pkgPath = (root) => {
   return `${root ? root : process.cwd()}/package.json`
@@ -123,17 +124,19 @@ export function normalizeOptions(options) {
  * @param {*} commander
  */
 export async function execRun(command) {
-  await new Promise((resolve, reject) => {
-    exec(`${command}`, (err) => {
-      if (err) {
-        console.log(`[err]:`, err)
-        process.exit(1)
-        // return reject(err)
-      }
-
-      resolve()
-    })
-  })
+  // await new Promise((resolve, reject) => {
+  //   exec(`${command}`, (error, stdout, stderr) => {
+  //     debugger
+  //     if (error) {
+  //       console.error(`exec error: ${error}`);
+  //       return;
+  //     }
+  //     console.log(`stdout: ${stdout}`);
+  //     console.error(`stderr: ${stderr}`);
+  //   }
+  //   )
+  // })
+  await promisify(exec)(command)
 }
 
 export async function execNpmRun(npmCommand) {

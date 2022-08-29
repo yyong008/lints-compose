@@ -8,13 +8,15 @@
     "linsts-compose": "./src/cli.js"
   },
   "scripts": {
+    "create": "node ./src/cli.js create",
     "stylelint": "stylelint ./src/**/*.{css,less,scss,sass}",
     "stylelint:fix": "stylelint ./src/**/*.{css,less,scss,sass} --fix",
     "lint": "eslint --ext .ts,.js,.tsx,.jsx .",
     "lint:fix": "eslint --ext .ts,.js,.tsx,.jsx . --fix",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
-    "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*"
+    "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
+    "commit": "git add . && cz"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +40,13 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "lint-staged": "^13.0.3",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
