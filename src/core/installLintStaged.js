@@ -35,7 +35,7 @@ export default async function installLintStaged(options, local = true) {
   const pkgJson = await getPkgJson()
   await setPkgJson(merge({}, pkgJson, packageObj))
 
-  if (options.single || single) {
+  if (options.single) {
     await genConfigFile(`${configFileName}`, lintStagedConfig)
   }
 

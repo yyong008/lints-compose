@@ -1,5 +1,6 @@
 import fsp from 'node:fs/promises'
 import fs from 'node:fs'
+import inquirer from 'inquirer'
 
 import { execRun } from './index.js'
 import logger from './logger.js'

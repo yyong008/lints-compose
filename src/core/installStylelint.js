@@ -33,7 +33,7 @@ export default async function installStylelint(options) {
 
   spinner.start(chalk.blue(`开始配置 ${OPERATION}...`))
 
-  if (options.single || single) {
+  if (options.single) {
     await genConfigFile('.stylelintrc', stylelintConfig)
     await genConfigIgnoreFileByName('.stylelintignore')
   } else {

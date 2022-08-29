@@ -115,7 +115,7 @@ export function writeConfigFile(fileneme, content) {
 }
 
 export function normalizeOptions(options) {
-  if (getNpmManagerFromUserAgent(process.env)) return options
+  // if (getNpmManagerFromUserAgent(process.env)) return options
 }
 
 /**
