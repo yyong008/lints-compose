@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import logger from './logger.js'
-import { execSync } from 'child_process'
+import { execSync, exec } from 'child_process'
 import { getConfig } from './config.js'
 
 const pkgPath = (root) => {
@@ -123,10 +123,12 @@ export function normalizeOptions(options) {
  * @param {*} commander
  */
 export async function execRun(command) {
-  new Promise((resolve, reject) => {
-    execSync(`${command}`, (err) => {
+  await new Promise((resolve, reject) => {
+    exec(`${command}`, (err) => {
       if (err) {
-        return reject(err)
+        console.log(`[err]:`, err)
+        process.exit(1)
+        // return reject(err)
       }
 
       resolve()

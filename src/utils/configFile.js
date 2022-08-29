@@ -1,4 +1,8 @@
 import fsp from 'node:fs/promises'
+import { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * 根目录：写配置文件
@@ -22,7 +26,7 @@ export async function genConfigFile(
 export async function genConfigIgnoreFileByName(filename) {
   const ignoreFileName = '_' + filename.slice(1)
   const content = await fsp.readFile(
-    `${process.cwd()}/src/tpls/${ignoreFileName}`,
+    `${__dirname}/../tpls/${ignoreFileName}`,
     'utf-8'
   )
 
