@@ -22,7 +22,7 @@ const packageObj = {
   }
 }
 
-export default async function installCommitzen(options) {
+export default async function installCommitzen() {
   const spinner = ora({
     color: 'green',
     text: chalk.blue(`🎡start ${OPERATION} config...\n`)

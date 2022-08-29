@@ -29,7 +29,7 @@ const packageObj = {
   }
 }
 
-export default async function installPrettier(options, local = true) {
+export default async function installPrettier(options) {
   const spinner = ora({
     color: 'green',
     text: chalk.blue(`🎡start ${OPERATION} config...\n`)

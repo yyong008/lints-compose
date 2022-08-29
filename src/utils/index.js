@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import logger from './logger.js'
-import { execSync, exec } from 'child_process'
-import { getConfig } from './config.js'
+import { exec } from 'child_process'
 import { promisify } from 'node:util'
 
 const pkgPath = (root) => {
@@ -115,7 +114,7 @@ export function writeConfigFile(fileneme, content) {
   fs.writeFileSync(`${process.cwd()}/${fileneme}`, content)
 }
 
-export function normalizeOptions(options) {
+export function normalizeOptions() {
   // if (getNpmManagerFromUserAgent(process.env)) return options
 }
 
@@ -137,17 +136,4 @@ export async function execRun(command) {
   //   )
   // })
   await promisify(exec)(command)
-}
-
-export async function execNpmRun(npmCommand) {
-  const { npmManager } = getConfig()
-  new Promise((resolve, reject) => {
-    execSync(npmManager === 'yarn' ? 'yarn' : `${npmManager} run`, (err) => {
-      if (err) {
-        return reject(err)
-      }
-
-      resolve()
-    })
-  })
 }

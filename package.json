@@ -9,13 +9,13 @@
   },
   "scripts": {
     "create": "node ./src/cli.js create",
-    "stylelint": "stylelint ./src/**/*.{css,less,scss,sass}",
     "stylelint:fix": "stylelint ./src/**/*.{css,less,scss,sass} --fix",
     "lint": "eslint --ext .ts,.js,.tsx,.jsx .",
     "lint:fix": "eslint --ext .ts,.js,.tsx,.jsx . --fix",
+    "stylelint": "stylelint ./src/**/*.{css,less,scss,sass}",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
-    "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
+    "postinstallmac": "git config core.hooksPath .husky && chmod 777 .husky/*",
     "commit": "git add . && cz"
   },
   "keywords": [],

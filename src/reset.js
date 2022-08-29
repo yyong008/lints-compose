@@ -23,7 +23,7 @@ export default async function reset() {
     '.husky'
   ]
 
-  const filesStr = configFiles.reduce((acc, p, c) => acc + ' ' + p)
+  const filesStr = configFiles.reduce((acc, p) => acc + ' ' + p)
 
   spinner.start('移除删除配置文件...')
   execSync(`rm -rf ../${filesStr}`)
@@ -36,7 +36,9 @@ export default async function reset() {
     'lint-staged',
     'prepare',
     'postinstallmac',
-    'commit'
+    'commit',
+    'stylelint',
+    'stylelint:fix'
   ]
 
   spinner.start('移除 npm 脚本...')

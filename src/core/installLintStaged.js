@@ -24,7 +24,7 @@ const lintStagedConfig = {
   '*.md': ['prettier --write']
 }
 
-export default async function installLintStaged(options, local = true) {
+export default async function installLintStaged(options) {
   const spinner = ora({
     color: 'green',
     text: chalk.blue(`🎡start ${OPERATION} config...\n`)
