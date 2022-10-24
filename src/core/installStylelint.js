@@ -17,7 +17,9 @@ const packageObj = {
     'stylelint:fix': 'stylelint ./src/**/*.{css,less,scss,sass} --fix'
   },
   devDependencies: {
-    stylelint: '^14.10.0'
+    stylelint: '^14.10.0',
+    'stylelint-prettier': '2.0.0',
+    'stylelint-config-prettier': '9.0.3'
   }
 }
 

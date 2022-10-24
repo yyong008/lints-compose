@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "linsts-compose": "./src/cli.js"
+    "lints-compose": "./src/cli.js"
   },
   "scripts": {
     "create": "node ./src/cli.js create",
